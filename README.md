@@ -39,14 +39,14 @@ public class ScoreUI : MonoBehaviour
 {
     private void Start()
     {
-        Signals.Get<TestSignal>().AddListener(OnScore);
-        Signals.Get<TestSignal>().AddListener(OnWin);
+        Signals.Get<PlayerScore>().AddListener(OnScore);
+        Signals.Get<PlayerWin>().AddListener(OnWin);
     }
 
     private void OnDestroy()
     {
-        Signals.Get<TestSignal>().RemoveListener(OnScore);
-        Signals.Get<TestSignal>().RemoveListener(OnWin);
+        Signals.Get<PlayerScore>().RemoveListener(OnScore);
+        Signals.Get<PlayerWin>().RemoveListener(OnWin);
     }
 
     private void OnScore(int score)
